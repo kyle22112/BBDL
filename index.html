@@ -47,10 +47,11 @@
       padding: 0;
     }
 
-    nav a {
+    nav ul li a {
       text-decoration: none;
       color: var(--text);
       font-weight: 500;
+      font-size: 1.1rem;
       border-bottom: 2px solid transparent;
       padding-bottom: 4px;
       transition: 0.25s;
@@ -100,13 +101,13 @@
       box-shadow: 0 14px 40px rgba(0,0,0,0.6);
     }
 
-    .box h1 {
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
+     .box h1 {
+      font-size: clamp(2rem, 4vw, 2.5rem);
     }
 
     .box p {
-      font-size: 1rem;
+      font-size: 1.15rem;   /* match About page */
+      line-height: 1.7;     /* improves readability */
       color: var(--text-dim);
     }
 

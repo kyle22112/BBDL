@@ -1,16 +1,194 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>BBDL</title>
-    <link rel="stylesheet" href="styles.css" />
-          <link rel="preconnect" href="https://fonts.googleapis.com">
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-          <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Chango&family=Fjalla+One&family=Mea+Culpa&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BBDL</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0e0e10;
+      --card: #1a1a1d;
+      --accent: #7f5af0;
+      --accent-soft: #a58aff;
+      --text: #e4e4e6;
+      --text-dim: #a1a1a7;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      text-align: center;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(14,14,16,0.75);
+      backdrop-filter: blur(12px);
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px;
+      transition: 0.25s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* TITLE */
+    .title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin: 2.5rem 0;
+      background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: 10% 80% 10%;
+      gap: 30px;
+    }
+
+    .col2 {
+      grid-column: 2;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* CARD */
+    .box {
+      background: var(--card);
+      width: 60%;
+      min-width: 450px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.05);
+      padding: 1.5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+      transition: 0.25s ease;
+    }
+
+    .box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 40px rgba(0,0,0,0.6);
+    }
+
+    .box h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .box p {
+      font-size: 1rem;
+      color: var(--text-dim);
+    }
+
+    /* IMAGE */
+    .round {
+      border-radius: 16px;
+      margin-top: 10px;
+      transition: 0.25s ease;
+    }
+
+    .round:hover {
+      transform: scale(1.03);
+    }
+
+    /* COLLAPSE */
+    .toggle-input { display: none; }
+
+    .toggle-label {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 1rem;
+      color: var(--accent);
+      cursor: pointer;
+    }
+
+    .toggle-label:hover {
+      color: var(--accent-soft);
+    }
+
+    .content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .toggle-input:checked ~ .content {
+      max-height: 500px;
+    }
+
+    /* LINKS */
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent-soft);
+    }
+
+    /* CREDIT */
+    .credit {
+      margin: 3rem 0 2rem;
+      font-size: 1rem;
+      color: var(--text-dim);
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="news.html">Bingo News</a></li>
+    <li><a href="music.html">Music</a></li>
+    <li><a href="members.html">Members</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="lore.html">Lore</a></li>
+  </ul>
+</nav>
+
 <h1 class="title">Official Bingo Boys DemonList</h1>
+
 <div class="grid">
-  <!-- Nine Circles 67 -->
+
+  <!-- COPY YOUR EXISTING LEVEL BLOCKS HERE EXACTLY -->
+  <!-- (No need to change anything inside them) -->
+
+  <!-- Example shown, keep the rest the same -->
+
   <div class="row1 col2">
     <div class="box">
       <h1>#1: Nine Circles</h1>
@@ -427,17 +605,14 @@
       </div>
     </div>
   </div>
-  
-</div>
-<p style=color:black;font-size:20px;text-align:center;>Created By <a href="https://weavilefan.github.io/Homepage/">WeavileFan</a>.<br>
-A <a href="https://bingo-boys.org/">Bingo Boys</a> Project.</p>
 
-<!--Icons:
-GhostRider--- https://files.catbox.moe/mdzo7f.png
-Weavile/Smellioat--- https://files.catbox.moe/wpe29y.png
-LocalJoe--- https://files.catbox.moe/v5r2hv.png
-Dacks--- https://files.catbox.moe/2cjlrr.png
--->
-      <script src="script.js"></script>
-  </body>
+</div>
+
+<!-- CREDIT -->
+<p class="credit">
+  Created By <a href="https://weavilefan.github.io/Homepage/">WeavileFan</a>.<br>
+  A <a href="https://bingo-boys.org/">Bingo Boys</a> Project.
+</p>
+
+</body>
 </html>
